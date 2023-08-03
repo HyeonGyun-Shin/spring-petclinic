@@ -7,7 +7,7 @@ pipeline {
         workspace = '/var/lib/jenkins/workspace'
         deploy_folder = "${workspace}/deploy"
         pet_jar = "petclinic-${env.BUILD_NUMBER}.jar"
-        ECR_PATH = '229584710736.dkr.ecr.ap-northeast-2.amazonaws.com'
+        ECR_PATH = '${ECR_URL}'
         IMAGE_NAME = 'petclinic'
         REGION = 'ap-northeast-2'
     }
