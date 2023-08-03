@@ -15,11 +15,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                script {
-                    git branch: 'main',
-                    credentialsId: 'HyeonGyun-Shin',
-                    url: 'https://github.com/HyeonGyun-Shin/spring-petclinic'
-                }
+                checkout scm
             }
         }
         stage ('Build Maven') {
