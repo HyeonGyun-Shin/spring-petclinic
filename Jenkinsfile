@@ -26,7 +26,7 @@ pipeline {
                         mkdir -p "${deploy_folder}"
                     fi
                     """
-                    sh "cd ${deploy_folder}
+                    sh "cd ${deploy_folder}"
                     sh "cp ${workspace}/${env.JOB_NAME}/target/*.jar ./${pet_jar}"
                 }
             }
