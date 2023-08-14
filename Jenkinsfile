@@ -38,7 +38,7 @@ pipeline {
                     cat > Dockerfile <<-EOF
 FROM openjdk:22-jdk-slim
 ADD ${deploy_folder}/${pet_jar} /home/${pet_jar}
-CMD ["nohup", "java", "-jar", "-Dspring.profiles.active='mysql'", "/home/${pet_jar}.jar"]
+CMD ["nohup", "java", "-jar", "-Dspring.profiles.active='mysql'", "/home/${pet_jar}"]
 EOF"""
                     
                     docker.withRegistry("https://${ECR_URL}", "ecr:${REGION}:shg7897@naver.com") {
