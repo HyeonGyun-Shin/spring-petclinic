@@ -6,7 +6,7 @@ pipeline {
     environment {
         workspace = '/var/lib/jenkins/workspace'
         deploy_folder = "${workspace}/deploy"
-        pet_jar = "petclinic-${env.BUILD_NUMBER}.jar"
+        pet_jar = "petclinic.jar"
         IMAGE_NAME = 'petclinic'
         REGION = 'ap-northeast-2'
     }
