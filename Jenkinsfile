@@ -43,7 +43,7 @@ CMD ["nohup", "java", "-jar", "-Dspring.profiles.active='mysql'", "/home/${pet_j
 EOF"""
                     
                     docker.withRegistry("https://${ECR_URL}", "ecr:${REGION}:shg7897@naver.com") {
-                        image = docker.build("${ECR_URL}/${IMAGE_NAME}:${env.BUILD_NUMBER}")
+                        image = docker.build("${ECR_URL}/${IMAGE_NAME}:petclinic-${env.BUILD_NUMBER}")
                         image.push()
                     }
                 }
