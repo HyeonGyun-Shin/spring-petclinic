@@ -21,7 +21,7 @@ pipeline {
         stage ('Build Maven') {
             steps {
                 script {
-                    sh './mvnw package -X'
+                    sh './mvnw package'
                     sh """
                     if [ ! -d "${deploy_folder}" ]; then
                         mkdir -p "${deploy_folder}"
